@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<routes>
+    <route pattern="/" controller="\Breeze\Controller\InformationController" method="controllerHelp" via="CLI" />
+    <route pattern="/h" controller="\Breeze\Controller\InformationController" method="controllerHelp" via="CLI" />
+    <route pattern="/help" controller="\Breeze\Controller\InformationController" method="controllerHelp" via="CLI" />
+    <route pattern="/create/:pattern+/:methods/:callback/:module" controller="\Breeze\Controller\ControllerController" method="create" via="CLI">
+        <conditions>
+            <condition name="method" rule="^([A-Z;]{3,})$"/>
+            <condition name="pattern" rule="(\/([a-z0-9+\$_-]\.?)+)*\/?"/>
+        </conditions>
+    </route>
+</routes>

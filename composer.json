@@ -1,0 +1,20 @@
+{
+    "name": "wave/breeze",
+    "description": "Breeze is a CLI tool for Wave framework applications",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dimitar Dimitrov",
+            "email": "daghostman.dd@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Breeze\\": "src\\"
+        }
+    },
+    "require": {
+        "wave/wave": ">=2.0"
+    }
+}

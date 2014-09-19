@@ -1,0 +1,18 @@
+<?php
+
+use Wave\Framework\Application\Core;
+use Wave\Framework\Http\Request;
+use Wave\Framework\Http\Response;
+
+require '../vendor/autoload.php';
+
+$app = new Core;
+$app->debug();
+
+$app->controller('/', 'GET', function() {
+  echo 'Hello, world!';
+});
+
+### NewModule
+
+$app->run(new Request($_SERVER), new Response(1.1), array());

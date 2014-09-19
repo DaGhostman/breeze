@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<routes>
+    <route pattern="/" controller="\Breeze\Controller\InformationController" method="moduleHelp" via="CLI" />
+    <route pattern="/h" controller="\Breeze\Controller\InformationController" method="moduleHelp" via="CLI" />
+    <route pattern="/help" controller="\Breeze\Controller\InformationController" method="moduleHelp" via="CLI" />
+    <route pattern="/create/:name/:prefix+" controller="\Breeze\Controller\ModuleController" method="create" via="CLI">
+        <conditions>
+            <condition name="name" rule="[a-zA-Z0-9_]{1,}"/>
+        </conditions>
+    </route>
+</routes>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Breeze" default="pack">
+    <target name="prepare">
+        <echo>Creating build folder</echo>
+        <mkdir dir="dist" />
+        <echo>Updating dependencies</echo>
+        <exec command="composer update -o" />
+    </target>
+    <target name="pack" depends="prepare">
+        <echo msg="The build file will be located in the dist folder." />
+        <pharpackage basedir="./" destfile="dist/breeze.phar" clistub="./root/index.php" compression="gzip">
+            <fileset dir="./">
+                <include name="**/**" />
+                <exclude name="bin/**" />
+                <exclude name=".idea/**" />
+                <exclude name="build.xml" />
+            </fileset>
+        </pharpackage>
+    </target>
+</project>
