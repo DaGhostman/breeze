@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="Breeze" default="pack">
+    <target name="clean">
+        <available file="dist/breeze.phar" type="file" property="exec.Exists" />
+        <if>
+            <isset property="exec.exists" />
+            <then>
+                <delete file="dist/breeze.phar" quiet="true" />
+            </then>
+        </if>
+    </target>
     <target name="prepare">
         <echo>Creating build folder</echo>
         <mkdir dir="dist" />
@@ -12,7 +21,7 @@
             <fileset dir="./">
                 <include name="**/**" />
                 <exclude name="bin/**" />
-                <exclude name=".idea/**" />
+                <exclude name="dist/**" />
                 <exclude name="build.xml" />
             </fileset>
         </pharpackage>
