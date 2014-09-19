@@ -1,6 +1,6 @@
 # Created by .gitignore support plugin (hsz.mobi)
-.idea/
-bin/
-dist/
+.idea
+bin
+dist
 composer.lock
 vendor/
