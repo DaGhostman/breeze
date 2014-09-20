@@ -19,7 +19,8 @@ class ConfigurationModel extends Registry
             'application' => 'application/',
             'web' => 'web/',
             'source' => 'src/',
-            'modules' => 'application/modules/'
+            'modules' => 'application/modules/',
+            'policy' => 'application/policy/'
         ),
         'composer' => 'composer'
     );

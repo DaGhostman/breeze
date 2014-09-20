@@ -9,7 +9,7 @@
             </then>
         </if>
     </target>
-    <target name="prepare">
+    <target name="prepare" depends="clean">
         <echo>Creating build folder</echo>
         <mkdir dir="dist" />
         <echo>Updating dependencies</echo>

@@ -41,6 +41,9 @@ class InitController
         mkdir(getcwd() . DIRECTORY_SEPARATOR .$config['directories']['web'], 0777);
         mkdir(getcwd() . DIRECTORY_SEPARATOR .$config['directories']['source'], 0777);
         mkdir(getcwd() . DIRECTORY_SEPARATOR .$config['directories']['modules'], 0777);
+        mkdir(getcwd() . DIRECTORY_SEPARATOR .$config['directories']['policy'], 0777);
+        mkdir(getcwd() . DIRECTORY_SEPARATOR .$config['directories']['policy'] . 'roles/', 0777);
+        mkdir(getcwd() . DIRECTORY_SEPARATOR .$config['directories']['policy'] . 'groups/', 0777);
 
         file_put_contents(
             getcwd() . DIRECTORY_SEPARATOR . $config['directories']['web'] . '/index.php',
@@ -48,7 +51,7 @@ class InitController
         );
 
         if (!is_file(getcwd() . '/composer.json')) {
-            $model = new ComposerModel($name);
+            $model = new ComposerModel((!is_null($name) ? $name : 'wave-app'));
             $model->save();
         }
 
@@ -79,12 +82,12 @@ class InitController
         $config = $context->get('config');
 
         if (strnatcmp(phpversion(),'5.4.0') < 0) {
-            echo "\t\t You need at least PHP version 5.4 to use this command. Please, upgrade and try again.\n\r";
+            fputs(STDOUT, "\t\t You need at least PHP version 5.4 to use this command. Please, upgrade and try again.\n\r");
             exit(0);
         }
 
-        echo "\t Starting server 'localhost' @ port $port use [Ctrl]+[C] to stop\n\r";
-        sleep(2);
+        fputs(STDOUT, "\t Starting server 'localhost' @ port $port use [Ctrl]+[C] to stop\n\r");
+
         shell_exec(sprintf(
            'php -S localhost:%d -t %s',
            $port,

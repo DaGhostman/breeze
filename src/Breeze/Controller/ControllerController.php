@@ -47,6 +47,10 @@ class ControllerController
             $route->addAttribute('method', $method);
             $route->addAttribute('controller', $controller);
 
+            if (!is_null($arguments->get('handler'))) {
+                $route->addAttribute('handler', $arguments->get('handler'));
+            }
+
             $xml->saveXML(sprintf(getcwd() . '/application/modules/%s.xml', $module));
         }
     }

@@ -14,7 +14,7 @@ class ComposerModel
     private $json = array();
 
     public function __construct($name){
-        $this->name =$name;
+        $this->name = $name;
         $this->json = array(
             "name" => sprintf('%s/%s', $name, $name),
             "description" => "Wave Framework application",

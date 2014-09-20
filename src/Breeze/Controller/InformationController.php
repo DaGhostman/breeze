@@ -53,7 +53,8 @@ class InformationController
         echo "\t 1. \033[1;36m pattern \033[0m - The URI pattern for the controller\n\r";
         echo "\t 2. \033[1;36m methods \033[0m - Methods for the controller if multiple, delimited by semi-colon. Eg. 'GET;POST'\n\r";
         echo "\t 3. \033[1;36m callback \033[0m - The callback for the controller: \\Some\\Class;method\n\r";
-        echo "\t 4. \033[1;36m module [Optional] \033[0m - Module to which the controller should be attached\n\r";
+        echo "\t 4. \033[1;36m module \033[0m - Module to which the controller should be attached\n\r";
+        echo "\t 5. \033[1;36m handler \033[0m - Optional. Use custom controller handler with the route\n\r";
         echo "\t\t ------ \n\r";
         echo "\t 1. \033[1;36m --with-conditions [Optional]\033[0m - Prepares the controller for conditions definition\n\r";
         echo "\t 2. \033[1;36m --handler [Optional]\033[0m - The class handling the controller\n\r";

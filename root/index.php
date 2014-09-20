@@ -100,6 +100,7 @@ $app->controller('/', 'CLI', function () {
 new Module($app, 'module', APPLICATION_PATH . '/application/modules', '/module'); // Creation of modules
 new Module($app, 'controller', APPLICATION_PATH . '/application/modules', '/controller'); // Creation of controllers
 new Module($app, 'application', APPLICATION_PATH . '/application/modules', '/application'); // Project instantiation
+new Module($app, 'policy', APPLICATION_PATH . '/application/modules', '/policy'); // Project instantiation
 
 $app->run(new Request($server), null, array(
    'config' => $config

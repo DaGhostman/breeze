@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <routes>
     <route pattern="/" controller="\Breeze\Controller\InformationController" method="applicationHelp" via="CLI" />
-    <route pattern="/create/:name" controller="\Breeze\Controller\InitController" method="create" via="CLI" />
+    <route pattern="/create(/:name)" controller="\Breeze\Controller\InitController" method="create" via="CLI" />
     <route pattern="/update" controller="\Breeze\Controller\InitController" method="update" via="CLI" />
     <route pattern="/depends/:package+/:version" controller="\Breeze\Controller\InitController" method="depends" via="CLI">
         <conditions>
